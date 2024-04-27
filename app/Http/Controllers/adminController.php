@@ -82,7 +82,7 @@ class adminController extends Controller
         ];
         addleave::where('id',$id)->update($data);
         //echo "success";
-       return redirect('viewleave');
+       return redirect('leaveview');
     }
 
 
@@ -105,11 +105,11 @@ class adminController extends Controller
         ];
         deptadd::where('id',$id)->update($data);
         //echo "success";
-       return redirect('viewdepartment');
+       return redirect('/departmentadd');
     }
     public function delete1($id){
         deptadd::where('id',$id)->delete();
-        return redirect('viewdepartment');
+        return redirect('leaveview');
      }
 
 
@@ -117,7 +117,7 @@ class adminController extends Controller
 
     public function delete($id){
         addleave::where('id',$id)->delete();
-        return redirect('viewleave');
+        return redirect('deptview');
      }
 
      public function departmentadd(){
@@ -140,7 +140,7 @@ class adminController extends Controller
         ];
         deptadd::insert($data);
         
-       return redirect('/');
+       return redirect('departmentadd');
     }
 
      public function admintable()
@@ -157,13 +157,13 @@ class adminController extends Controller
 
    public function approve($id){
     userleave::where('status','applied')->where('id',$id)->update(['status'=>"approved"]);
-    return redirect('admin.userleaveview');
+    return redirect('userleaveview');
 
  }
 
  public function decline($id){
     userleave::where('status','applied')->where('id',$id)->update(['status'=>"declined"]);
-    return redirect('admin.userleaveview');
+    return redirect('userleaveview');
  }
 
  
