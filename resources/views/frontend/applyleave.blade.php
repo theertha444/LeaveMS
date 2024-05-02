@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" /> 
+
   
   
 </head>
@@ -25,6 +26,8 @@
     .container{
         margin-top:40px;
         margin-bottom:30px;
+        color:white;
+        
         
         
     }
@@ -32,6 +35,15 @@
         color:white;
         
     }
+    input[type=text],
+        select,textarea{
+            
+            /* box-shadow:10px 5px 5px lightgrey; */
+            /* background-color:grey;
+            margin-left:300px; */ 
+           
+            color:white;
+        }
 
     
 
@@ -126,7 +138,7 @@
 </head>
 <body>
     <div class="container">
-<form action="/loginAction" method="post">
+<form action="/loginAction" method="post" id="leave">
         @csrf -->
         <!-- <div class="Form">
                 <h1>Apply For Leave</h1>
@@ -184,7 +196,7 @@
 <body>
 <header class="conainer-fluid">
            <div class="header-top">
-               <div class="container">
+               <div class="container1">
                    <div class="row">
                        <div class="col-md-4 logo">
                            <img src="assets/images/login/log.png" alt="" width="70"> 
@@ -235,9 +247,9 @@
            </div>
        </header> 
      
-<form action="/applyAction" method="post" autocomplete="off">
+<form action="/applyAction" method="post" autocomplete="off" id="leave">
     @csrf
-   <div class="container bg-success ">
+   <div class="container  bg-info ">
     
     <h2 style="text-align:center;" >Apply For Leave</h2>
 
@@ -259,7 +271,7 @@
          </div>
          <div class="form-group">
             <label for="name">To Date:</label>
-            <input type="date" name="todate" id="todte" class="form-control">
+            <input type="date" name="todate" id="todate" class="form-control">
          </div>
          <div class="form-group">
             <label for="name">Description:</label>
@@ -280,6 +292,8 @@
    </div> 
   
 </form>
+
+
 
 <footer class="container-fluid footer">
         <div class="container">
@@ -352,6 +366,33 @@
             </div>
         </div>
     </footer>    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+<script type="text/javascript">
+$("#leave").validate({
+    rules:
+    {
+        name:{
+            required:true,
+            minlength:4
+        },
+        leavetype:
+        {
+            required:true,
+        },
+        fromdate:{
+            required:true
+        },
+        todate:{
+            required:true
+        }
+    }
+
+    });
+
+</script>
     
 </body>
 </html>

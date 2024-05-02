@@ -31,7 +31,7 @@
 
 
     </div>
-    <form action="/contactAction" method="post" autocomplete="off">
+    <form action="/contactAction" method="post" autocomplete="off" id="contact">
                        @csrf
 
     <div class="row contact-rooo no-margin">
@@ -70,6 +70,34 @@
                     </div>
         </form>
                 </div>
+
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+<script type="text/javascript">
+$("#contact").validate({
+    rules:
+    {
+        name:{
+            required:true,
+            minlength:4
+        },
+        email:
+        {
+            required:true,
+            email:true
+        },
+        mobilenumber:{
+            required:true,
+            minlenght:10
+        }
+        
+    }
+
+    });
+
+</script>
                 <div class="col-sm-5">
 
                     <div style="margin:50px" class="serv">

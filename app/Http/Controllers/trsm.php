@@ -125,7 +125,7 @@ class trsm extends Controller
         ];
         register::insert($data);
         
-       return redirect('/');
+       return redirect('register');
     }
 
     
@@ -182,7 +182,7 @@ class trsm extends Controller
         ];
         userleave::insert($data);
         
-       return redirect('/');
+       return redirect('applyleave');
     }
 
     public function editprofile()

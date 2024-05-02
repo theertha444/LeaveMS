@@ -87,7 +87,7 @@
                     <div class="row">
                         <div class="col-md-7 pe-0">
                             <div class="form-left h-100 py-5 px-5">
-                            <form action="/loginAction" method="post" class="row g-4">
+                            <form action="/loginAction" method="post" class="row g-4" id="login">
                                 @csrf
                                 
                                         <div class="col-12">
@@ -130,6 +130,31 @@
 
                             </div>
                         </div>
+
+
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+<script type="text/javascript">
+$("#login").validate({
+    rules:
+    {
+        username:{
+            required:true,
+            minlength:4
+        },
+        password:
+        {
+            required:true,
+            minlenght:8
+        }
+        
+    }
+
+    });
+
+</script>
                         <div class="col-md-5 ps-0 d-none d-md-block">
                             <div class="form-right h-100 bg-muted text-white text-center pt-5">
                                 <i class="bi bi-bootstrap"></i>
