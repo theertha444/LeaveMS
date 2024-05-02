@@ -76,7 +76,7 @@
                       <input type="text" class="form-control" id="name" name="name">
                   </div>
                   <div class="form-group">
-                      <label for="departement"><i class="fas fa-envelope"></i> Departement</label>
+                      <label for="department"><i class="fas fa-envelope"></i> Department</label>
                       <input type="text" class="form-control" id="department" name="department">
                   </div>
                   <div class="form-group">
@@ -107,26 +107,36 @@
 $("#regform").validate({
     rules:
     {
-        empid:{
-            required:true,
-            
-        },
-        name:
+        empid:
         {
             required:true,
-            minlenght:4
         },
-        department:{
-            required:true
+        name:{
+            required:true,
+            minlength:4
+        },
+        department:
+        {
+            required:true,
+        },
+        position:{
+            required:true,
+        },
+        username:{
+            required:true,
+        },
+        password:{
+            required:true,
+            minlenght:8
         }
     }
-    
 
     });
 
 </script>
-
-
+  
+  
+ 
 
 </body>
 </html>
